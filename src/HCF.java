@@ -1,22 +1,30 @@
-import java.util.Scanner;
-public class HCF {
-        public static int greatest(int a,int b){
-	while(b!=0){
-	        int temp=b;
-		b=a%b;
-		a=temp;
-	}
-	return a;
+import java.util.*;
+public class hcf {
+    int lesser;
+    hcf(int a,int b){
+        if (a<b){
+            lesser=a;
+        }
+        else {
+            lesser=b;
+        }
+        int hcf=0;
+        for (int i=1;i<lesser;i++){
+            if (a%i==0&&b%i==0){
+                hcf=i;
+            }
+        }
+        System.out.println(hcf);
 
-}
-
-public static void main(String args[]){
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter two numbers");
-	int a=sc.nextInt();
-	int b=sc.nextInt();
-	System.out.println("HCF is "+greatest(a,b));
     }
 }
+class Mains{
+    public static void main(String[] args) {
+        int n,m;
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        m=sc.nextInt();
 
-
+        hcf obj=new hcf(n,m);
+    }
+}
